@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FE Konsult</title>
@@ -8,33 +9,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-  </head>
-  <body>
+</head>
+
+<body>
     <!--NAvigation-->
     <nav>
-        <div><a href="#hero" class="logo"><span>FE</span>Konsult</a></div>
-        <div>
-            <ul class="nav-menu">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="">SERVICES</a></li>
-                <li><a href="">OUR WORK</a></li>
-                <li><a href="">CONTACT</a></li>
-            </ul>
+        <div class="nav-container">
+            <div><a href="#hero" class="logo"><span>FE</span>Konsult</a></div>
+            <div>
+                <ul class="nav-menu">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="">SERVICES</a></li>
+                    <li><a href="">OUR WORK</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search..."
+                    style="width: 70%; padding: 1px; font-size: 12px; background-color: #1a1c31;">
+                <i class="fas fa-search"
+                    style="position: absolute; top: 50%; right: 60px; transform: translateY(-50%); color: gray;"></i>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Search..." style="width: 70%; padding: 1px; font-size: 12px; background-color: #1a1c31;">
-            <i class="fas fa-search" style="position: absolute; top: 50%; right: 60px; transform: translateY(-50%); color: gray;"></i>
-        </div>
-        <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
     </nav>
     <!--Hero Section-->
     <section id="hero">
@@ -42,8 +47,9 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Your partner in front end development and web design</h1>
-            <p>If you need help turning your design into clean, functional code, we’re here to assist you. Let us bring your vision to life with precision and expertise.</p>
-            <button class="call-to-action-btn">LEARN MORE</button>
+                    <p class="hero-paragraph">If you need help turning your design into clean, functional code, we’re
+                        here to assist you. Let us bring your vision to life with precision and expertise.</p>
+                    <button class="call-to-action-btn">LEARN MORE</button>
                 </div>
                 <div class="cube-container">
                     <div class="cube">
@@ -52,9 +58,10 @@
                         <div class="face right"><img src="/images/cod.png" alt="Right"></div>
                         <div class="face left"><img src="/images/sweet.jpg" alt="Left"></div>
                         <div class="face top"><img src="/images/skanor.jpg" alt="Top"></div>
-                        <div class="face bottom"><img src="/images/pexels-olly-789822-removebg-preview.png" alt="Bottom"></div>
-                      </div>
-                  </div>
+                        <div class="face bottom"><img src="/images/pexels-olly-789822-removebg-preview.png"
+                                alt="Bottom"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -63,19 +70,22 @@
         <div class="main-container">
             <div class="about-left">
                 <h1>ABOUT US</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.</p>
-                <button>READ MORE</button>  
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.
+                </p>
+                <button>READ MORE</button>
             </div>
     </section>
-     <!--About Section-->
-     <section id="about">
+    <!--About Section-->
+    <section id="about">
         <div class="main-container">
             <div class="about-left">
                 <h1>ABOUT US</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.</p>
-                <button>READ MORE</button>  
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.
+                </p>
+                <button>READ MORE</button>
             </div>
     </section>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
