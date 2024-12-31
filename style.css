@@ -19,10 +19,20 @@ html {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 600;
   color: #d3d2d4;
   line-height: 65px;
+}
+
+.call-to-action-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FD7E14;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 /* NAVIGATION */
@@ -68,12 +78,43 @@ nav a {
   color:  #FD7E14;
 }
 
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #d3d2d4;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  
+  /* When the menu is active */
+  .hamburger-menu.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger-menu.active span:nth-child(2) {
+    opacity: 0; /* Hides the middle line */
+  }
+  
+  .hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
 /* HERO */
 
 #hero {
-  /*background-image: url("/images/home-hero-bg.jpg");
-  background-size: cover;
-  background-position: center;*/
+
   background: linear-gradient(to bottom, #000000 50%, #0f033d 70%, #170368 100%);
   height: 100vh;
   display: flex;
@@ -83,14 +124,7 @@ nav a {
   position: relative;
 }
 
-/* .overlay {
-  background-color: rgba(10, 10, 19, 0.76);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
+
 
 .hero-content {
   position: relative;
@@ -101,55 +135,72 @@ nav a {
   align-items: center;
   max-width: 1200px;
   text-align: left;
+  margin-top: 60px;
 }
 
 .hero-text {
     max-width: 600px;
 }
 
-.hero-image {
-  max-width: 350px;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(4, 1fr);
-  gap: 22px;
-  border-radius: 12px;
- 
- 
-}
-
-.hero-image img {
+.cube-container {
+    perspective: 1200px; /* Adds perspective for 3D effect */
+    margin-right: 90px;
+  }
+  
+  .cube {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    transform-style: preserve-3d; /* Preserve 3D transformation */
+    animation: rotate 10s infinite linear; /* Optional rotation animation */
+  }
+  
+  .face {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background: lightgray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .face img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.img-1 {
-    grid-column: 1 / 13;
-    grid-row: 1 / 5;S
-}
-
-.img-2 {
-    grid-column: 5 / 13;
-    grid-row: 3 / 5;
-    box-shadow: 0 0 15px #820ce8, 0 0 25px #820ce8, 0 0 40px #820ce8,
-    0 0 60px #820ce8;
+    object-fit: cover; /* Ensures the image fills the face */
+  }
+  
+ /* Positioning the faces */
+.front {
+    transform: rotateY(0deg) translateZ(95px);
+  }
+  
+  .back {
+    transform: rotateY(180deg) translateZ(95px);
+  }
+  
+  .right {
+    transform: rotateY(90deg) translateZ(95px);
+  }
+  
+  .left {
+    transform: rotateY(-90deg) translateZ(95px);
+  }
+  
+  .top {
+    transform: rotateX(90deg) translateZ(95px);
+  }
+  
+  .bottom {
+    transform: rotateX(-90deg) translateZ(95px);
   }
 
-  .img-3 {
-    grid-column: 8 / 13;
-    grid-row: 1 / 3;
-    box-shadow: 0 0 15px #820ce8, 0 0 25px #820ce8, 0 0 40px #820ce8,
-    0 0 60px #820ce8;
-  }
-
-  .img-4 {
-    grid-column: 1 / 5;
-    grid-row: 3 / 5;
-    box-shadow: 0 0 15px #820ce8, 0 0 25px #820ce8, 0 0 40px #820ce8,
-    0 0 60px #820ce8;
-    
+  @keyframes rotate {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
   }
 /* ABOUT */
 
@@ -166,11 +217,20 @@ nav a {
     padding: 20px;
     }
 
+    .cube-container,
+    .search {
+    display: none;
+    }
+
+    .hamburger-menu {
+    display: flex;
+    }
+
     nav {
     padding: 1rem 20px;
     }
     h1 {
-    font-size: 2.7rem;
+    font-size: 2.2rem;
     line-height: 55px;
     }
   nav ul {
@@ -186,29 +246,78 @@ nav a {
     text-decoration: none;
   }
 
-  nav ul li a:hover {
-    color: #ffd;
-  }
 
-  nav ul li a.active {
-    color: #ffd;
+    /* Hide the menu in mobile view */
+.nav-menu {
+    display: flex;
+    flex-direction: column; 
+    position: absolute;
+    top: 36px; 
+    left: 0;
+    right: 0;
+    background-color: black; 
+    padding: 1rem;
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
-
-  nav ul li a.active::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #ffd;
-    margin-top: 5px;
+  
+  .nav-menu.show {
+    transform: translateY(0); /* Slide it into view */
+    opacity: 1; /* Make it visible */ 
   }
-
-  nav ul li a::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    margin-top: 5px;
+  
+  .nav-menu li {
+    margin: 10px 0; 
+  }
+  
+  .nav-menu a {
+    font-size: 14px;
+    color: #d3d2d4;
+    text-decoration: none;
   }
 }
+
+@media (orientation: landscape) and (max-width: 1024px) {
+    #hero {
+      height: auto; /* Allow content to adjust to height dynamically */
+      overflow: auto; /* Enable scrolling if needed */
+    }
+
+    .cube-container {
+        margin-right: 0;
+      }
+
+      .cube {
+        width: 120px;
+        height: 120px;
+      }
+
+      .face {
+        width: 150px;
+        height: 150px;
+      }
+
+      .front {
+        transform: rotateY(0deg) translateZ(50px); /* Half the new cube width */
+      }
+    
+      .back {
+        transform: rotateY(180deg) translateZ(50px);
+      }
+    
+      .right {
+        transform: rotateY(90deg) translateZ(50px);
+      }
+    
+      .left {
+        transform: rotateY(-90deg) translateZ(50px);
+      }
+    
+      .top {
+        transform: rotateX(90deg) translateZ(50px);
+      }
+    
+      .bottom {
+        transform: rotateX(-90deg) translateZ(50px);
+      }
+  }

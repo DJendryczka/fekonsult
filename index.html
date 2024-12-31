@@ -11,40 +11,50 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
   </head>
   <body>
     <!--NAvigation-->
     <nav>
         <div><a href="#hero" class="logo"><span>FE</span>Konsult</a></div>
         <div>
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="">SERVICES</a></li>
                 <li><a href="">OUR WORK</a></li>
                 <li><a href="">CONTACT</a></li>
             </ul>
         </div>
-        <div>
-           <a href=""> search</a>
+        <div class="search">
+            <input type="text" placeholder="Search..." style="width: 70%; padding: 1px; font-size: 12px; background-color: #1a1c31;">
+            <i class="fas fa-search" style="position: absolute; top: 50%; right: 60px; transform: translateY(-50%); color: gray;"></i>
         </div>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
     </nav>
     <!--Hero Section-->
     <section id="hero">
-        <div class="overlay">
-        </div>
         <div class="main-container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Your partner in front end development and web design</h1>
             <p>If you need help turning your design into clean, functional code, we’re here to assist you. Let us bring your vision to life with precision and expertise.</p>
-            <button>LEARN MORE</button>
+            <button class="call-to-action-btn">LEARN MORE</button>
                 </div>
-                <div class="hero-image">
-                    <img src="images/cod.png" class="img-1" alt="hero" width="400"/>
-                    <!-- <img src="images/Bella.jpg" class="img-2" alt="hero" width="400"/>
-                    <img src="images/sweet.jpg" class="img-3" alt="hero" width="400"/>
-                    <img src="images/skanor.jpg" class="img-4" alt="hero" width="400"/> -->
-                </div>
+                <div class="cube-container">
+                    <div class="cube">
+                        <div class="face front"><img src="/images/Bella.jpg" alt="Front"></div>
+                        <div class="face back"><img src="/images/cod.png" alt="Back"></div>
+                        <div class="face right"><img src="/images/cod.png" alt="Right"></div>
+                        <div class="face left"><img src="/images/sweet.jpg" alt="Left"></div>
+                        <div class="face top"><img src="/images/skanor.jpg" alt="Top"></div>
+                        <div class="face bottom"><img src="/images/pexels-olly-789822-removebg-preview.png" alt="Bottom"></div>
+                      </div>
+                  </div>
             </div>
         </div>
     </section>
