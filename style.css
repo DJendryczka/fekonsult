@@ -697,7 +697,8 @@ footer {
 }
 
 @media (orientation: landscape) and (max-width: 1024px) {
-    #hero {
+    #hero,
+    #contact {
       height: auto; /* Allow content to adjust to height dynamically */
       overflow: auto; /* Enable scrolling if needed */
     }
