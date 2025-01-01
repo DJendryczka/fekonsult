@@ -12,17 +12,22 @@ html {
 /* TOPOGRAPHY */
 
 .main-container {
-  max-width: 1240px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   padding: 40px;
 }
 
 h1 {
-  font-size: 3.2rem;
-  font-weight: 200;
+  font-size: 3rem;
+  font-weight: 300;
   color: #d3d2d4;
   line-height: 65px;
+}
+
+p {
+    font-size: 1rem;
+    color: #d3d2d4;
 }
 
 .call-to-action-btn {
@@ -56,10 +61,10 @@ nav {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1280px;
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 80px;
   
 }
 
@@ -67,14 +72,21 @@ nav {
   position: relative;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+}
+
 nav ul {
   display: flex;
+  width: 100%;
+  justify-content: space-around;
   list-style: none;
 }
 
-nav ul li {
-  margin-left: 3rem;
-}
 
 nav a {
   color: #d3d2d4;
@@ -113,13 +125,13 @@ nav a {
 
 
   
-  /* When the menu is active */
+  
   .hamburger-menu.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
   
   .hamburger-menu.active span:nth-child(2) {
-    opacity: 0; /* Hides the middle line */
+    opacity: 0; 
   }
   
   .hamburger-menu.active span:nth-child(3) {
@@ -139,7 +151,11 @@ nav a {
   position: relative;
 }
 
-
+.block-container {
+  background-color: black;
+  padding: 40px;
+  border-radius: 20px;
+}
 
 .hero-content {
   position: relative;
@@ -150,7 +166,7 @@ nav a {
   align-items: center;
   max-width: 1200px;
   text-align: left;
-  margin: 120px 0;
+  margin: 80px 0;
 }
 
 .hero-text {
@@ -159,7 +175,7 @@ nav a {
 
 .hero-paragraph {
   margin: 30px 0;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 2px;
 }
 
@@ -234,13 +250,24 @@ nav a {
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
-    .main-container,
+    .main-container{
+    padding: 20px;
+    }
+
     .nav-container {
+    padding: 0 40px;
+    }
+
+    .block-container {
     padding: 20px;
     }
 
     #hero {
       height: auto;
+    }
+
+    .hero-content {
+      margin-top: 120px;
     }
 
     .cube-container,
@@ -275,7 +302,7 @@ nav a {
     display: flex;
     flex-direction: column; 
     position: absolute;
-    top: 36px; 
+    top: 40px; 
     left: 0;
     right: 0;
     background-color: black; 
@@ -290,7 +317,7 @@ nav a {
   }
   
   .nav-menu li {
-    margin: 10px 0; 
+    margin: 10px 25px; 
   }
   
   .nav-menu a {

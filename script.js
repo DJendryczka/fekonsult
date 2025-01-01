@@ -9,3 +9,4 @@ document.addEventListener('DOMContentLoaded', () => {
     navMenu.classList.toggle('show'); // Toggle the menu visibility
   });
 });
+
