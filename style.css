@@ -67,6 +67,18 @@ p {
     margin-top: 20px;
 }
 
+.action-btn {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #FD7E14;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+} 
+
 /* NAVIGATION */
 
 nav {
@@ -300,11 +312,99 @@ nav a {
   
 }
 
-/* Portfolio */
-
+/* Section portfolio */
 #work {
   background: linear-gradient(to top, #000000 50%, #0f033d 70%, #170368 100%);
+  padding: 50px 0; 
 }
+
+#work {
+  background: linear-gradient(to top, #000000 20%, #0f033d 70%, #170368 100%);
+  padding: 50px 0;
+}
+
+/* Wrapper that is exactly 1200px wide and centered */
+.slider-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 auto; 
+  width: 800px;
+  
+  box-sizing: border-box;
+  
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 40px;
+}
+
+/* Review text */
+.review {
+  margin-top: 10px;
+  text-align: center;
+  color: #fff; 
+}
+
+/* Arrow buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+/* Headings above the slider */
+.block-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.block-container h2 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.block-container p {
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
 
 /* CONTACT */
 
@@ -538,6 +638,11 @@ footer {
     display: flex;
     }
 
+    .slide {
+      width: 85%;     /* or maybe 85%, tweak to taste */
+      margin: 0 5px;  /* smaller side margin */
+    }
+
     h1 {
     font-size: 2.2rem;
     line-height: 55px;
@@ -635,3 +740,24 @@ footer {
         transform: rotateX(-90deg) translateZ(50px);
       }
   }
+
+/* We'll do separate widths in media queries or directly in JS. */
+@media (min-width: 1250px) {
+  .slider-container {
+    width: 1200px;
+  }
+  .slide {
+    width: 800px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .slider-container {
+    width: 100%;
+  }
+  .slide {
+    width: 100%;
+    margin: 0;  
+  }
+}
