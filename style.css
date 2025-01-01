@@ -283,7 +283,8 @@ nav a {
 /* ABOUT */
 
 #about {
- display: none;
+  background: linear-gradient(to bottom, #000000 10%, #0f033d 40%, #170368 100%);
+  padding: 50px 0; 
 }
 
 /* SERVICES */
