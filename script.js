@@ -147,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
   startAutoSlide();
 });
 
-// Function to set a cookie
 function setCookie(name, value, days) {
   const date = new Date();
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
@@ -155,7 +154,6 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
-// Function to get a cookie
 function getCookie(name) {
   const nameEQ = name + "=";
   const cookies = document.cookie.split(';');
@@ -166,16 +164,19 @@ function getCookie(name) {
   return null;
 }
 
-// Show the cookie banner if the user hasn't accepted cookies yet
 window.onload = function () {
   if (!getCookie("cookiesAccepted")) {
     document.getElementById("cookie-banner").style.display = "block";
   }
 };
 
-// Handle the "Accept Cookies" button click
-document.getElementById("accept-cookies").addEventListener("click", function () {
-  setCookie("cookiesAccepted", "true", 365); // Set cookie for 1 year
+document.getElementById("accept-necessary").addEventListener("click", function () {
+  setCookie("cookiesAccepted", "necessary", 365);
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("accept-all").addEventListener("click", function () {
+  setCookie("cookiesAccepted", "all", 365);
   document.getElementById("cookie-banner").style.display = "none";
 });
 
