@@ -147,5 +147,39 @@ document.addEventListener('DOMContentLoaded', () => {
   startAutoSlide();
 });
 
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    let cookie = cookies[i].trim();
+    if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length);
+  }
+  return null;
+}
+
+window.onload = function () {
+  if (!getCookie("cookiesAccepted")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+};
+
+document.getElementById("accept-necessary").addEventListener("click", function () {
+  setCookie("cookiesAccepted", "necessary", 365);
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+document.getElementById("accept-all").addEventListener("click", function () {
+  setCookie("cookiesAccepted", "all", 365);
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+
 
 
