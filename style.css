@@ -506,6 +506,7 @@ nav a {
   font-size: 16px;
   box-sizing: border-box;
   background-color: #14293d;
+  color: #aaa;
 }
 
 .contact-form input::placeholder,
@@ -513,11 +514,12 @@ nav a {
   color: #aaa;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: #7b61ff;
   box-shadow: 0 0 5px rgba(123, 97, 255, 0.3);
+  background-color: #14293d;
 }
 
 /* Submit Button */
@@ -530,6 +532,16 @@ nav a {
 
 .submit-btn:hover {
   background-color: #6a51e0;
+}
+
+.contact-form input:-webkit-autofill {
+  background-color: #14293d !important;
+  color: #aaa !important;
+  box-shadow: 0 0 0px 1000px #14293d inset !important;
+}
+
+.contact-form input:-webkit-autofill::first-line {
+  color: #aaa !important;
 }
 
 /* General Footer Styles */
